@@ -43,6 +43,9 @@ class PushNotification(object):
         #TODO Need to add logic to confirm ISO 8601 format (e.g. 2013-07-11T00:31:38Z)
         self._kwargs['expiration_time'] = date
 
+    def add_custom_data(self, key, value):
+        self._data[key] = value
+
     def _prepare_push(self):
         if self.sound:
             self._data['sound'] = self.sound
